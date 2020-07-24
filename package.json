@@ -1,5 +1,5 @@
 {
-  "name": "multiline",
+  "name": "multiline-str",
   "version": "1.0.0",
   "description": "Strip indentaion from multiline strings in JS/TS based on indentaion of closing quote.",
   "main": "dist/index.js",

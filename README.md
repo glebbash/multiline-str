@@ -7,13 +7,13 @@ Strip indentation of multiline strings in JS/TS based on length of the last line
 ## Installation
 
 ```bash
-npm add multiline
+npm add multiline-str
 ```
 
 ## Usage
 
 ```ts
-import { m } from "multiline"
+import { m } from "multiline-str"
 
 console.log(m`
     Indentation is magically removed.

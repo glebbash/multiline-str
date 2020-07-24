@@ -21,7 +21,7 @@ console.log(m`
     `)
 
 console.log(m`
-          You control indentation the length of the last line
+          You control indentation with the length of the last line
 this ---> `)
 
 console.log(m`

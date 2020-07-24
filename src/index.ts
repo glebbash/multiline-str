@@ -1,21 +1,13 @@
 /**
- * Strip indentaion from multiline strings based on indentaion of closing quote.
- * Notice: first and last lined will be removed
+ * Strip indentation of multiline strings based on length of the last line.<br>
+ * Notice: first and last lines will be removed.
  * @example
- * ```
+ * ```ts
  * console.log(multiline`
  *     line 1
  *     line 2
  *     line 3
  *     `)
- * ```
- * 
- * ```
- * console.log(multiline`
- *     |any text
- *     | that has less indentaion than ending quote
- *     |  will be removed
- *     |`)
  * ```
  * 
  * @param strings Array of template strings.
@@ -44,6 +36,14 @@ export function multiline(
 
 /**
  * Multiline function alias.
+ * @example
+ * ```ts
+ * console.log(m`
+ *     line 1
+ *     line 2
+ *     line 3
+ *     `)
+ * ```
  * @see {@link multiline} for info.
  */
 export const m = multiline

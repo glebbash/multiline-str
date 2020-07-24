@@ -1,8 +1,8 @@
-# multiline
+# multiline-str
 
 Strip indentation of multiline strings in JS/TS based on length of the last line.
 
-[Docs](https://glebbash.github.io/multiline/) | [Code](https://github.com/glebbash/multiline)
+[Docs](https://glebbash.github.io/multiline-str/) | [Code](https://github.com/glebbash/multiline-str)
 
 ## Installation
 

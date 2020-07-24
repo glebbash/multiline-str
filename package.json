@@ -1,0 +1,71 @@
+{
+  "name": "multiline",
+  "version": "1.0.0",
+  "description": "Strip indentaion from multiline strings in JS/TS based on indentaion of closing quote.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "tsc && nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glebbash/multiline.git"
+  },
+  "keywords": [
+    "ts",
+    "typescript",
+    "multiline",
+    "string",
+    "indentation",
+    "dedent"
+  ],
+  "author": "glebbash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glebbash/multiline/issues"
+  },
+  "homepage": "https://github.com/glebbash/multiline#readme",
+  "prettier": {
+    "semi": false,
+    "tabWidth": 4,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "commonjs": true,
+      "es6": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
+  },
+  "mocha": {
+    "require": ["ts-node/register", "source-map-support/register"],
+    "recursive": true,
+    "spec": "tests/**.test.ts"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {}
+}

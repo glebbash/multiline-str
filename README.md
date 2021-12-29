@@ -5,8 +5,6 @@
 
 Strip indentation of multiline strings based on length of the last line.
 
-<!-- TODO: add extended examples -->
-
 Installation:
 
 ```sh

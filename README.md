@@ -3,7 +3,7 @@
 [![Deploy](https://github.com/glebbash/multiline-str/workflows/build/badge.svg)](https://github.com/glebbash/multiline-str/actions)
 [![Coverage Status](https://coveralls.io/repos/github/glebbash/multiline-str/badge.svg?branch=master)](https://coveralls.io/github/glebbash/multiline-str?branch=master)
 
-Strip indentation of multiline strings in JS/TS based on length of the last line.
+Strip indentation of multiline strings based on length of the last line.
 
 <!-- TODO: add extended examples -->
 

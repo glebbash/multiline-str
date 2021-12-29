@@ -1,6 +1,6 @@
 {
   "name": "multiline-str",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Strip indentation of multiline strings in based on length of the last line.",
   "keywords": [
     "multiline",

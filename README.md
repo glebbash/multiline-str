@@ -23,7 +23,7 @@ import { m } from "https://deno.land/x/multiline_str/mod.ts";
 ## Usage
 
 ```ts
-import { m } from 'multiline-str';
+import { m } from "multiline-str";
 
 console.log(m`
     Indentation is magically removed.

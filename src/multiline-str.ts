@@ -29,7 +29,10 @@ export function multiline(
     .map(
       (str, index) =>
         str.replace(/\\\n[ \t]*/g, "").replace(/\\`/g, "`") +
-        String(interpolationArgs[index]).replace(/\n/g, `\n${IDENT_PLACEHOLDER}`),
+        String(interpolationArgs[index]).replace(
+          /\n/g,
+          `\n${IDENT_PLACEHOLDER}`,
+        ),
     )
     .join("")
     .split("\n")

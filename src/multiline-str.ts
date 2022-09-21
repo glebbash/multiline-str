@@ -29,7 +29,7 @@ export function multiline(
     .map(
       (str, index) =>
         str.replace(/\\\n[ \t]*/g, "").replace(/\\`/g, "`") +
-        String(interpolationArgs[index]).replace(/\n/g, `\n${TOKEN}`),
+        String(interpolationArgs[index]).replace(/\n/g, `\n${IDENT_PLACEHOLDER}`),
     )
     .join("")
     .split("\n")
@@ -40,10 +40,10 @@ export function multiline(
 
   // dedent
   return stringLines.map((str) =>
-    str.split(TOKEN).join(" ".repeat(identation)).slice(identation)
+    str.split(IDENT_PLACEHOLDER).join(" ".repeat(identation)).slice(identation)
   ).join("\n");
 }
 
-const TOKEN = "```";
+const IDENT_PLACEHOLDER = "```";
 
 export { multiline as m };

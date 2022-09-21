@@ -1,0 +1,77 @@
+name: Release
+on: ["push", "pull_request"]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set up Actions
+        uses: actions/checkout@v2
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1.0.0
+        with:
+          deno-version: v1.x
+
+      - name: Check formatting
+        run: deno fmt --check
+
+      - name: Analyze code
+        run: deno lint
+
+      - name: Run unit and integration tests
+        run: deno test -A --coverage=cov
+
+      - name: Test on Node
+        run: deno run -A ./scripts/build_npm.ts
+
+      - name: Generate coverage report
+        run: deno coverage --lcov cov > cov.lcov
+      
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: cov.lcov
+
+  release:
+    name: Release
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-20.04
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1.0.0
+        with:
+          deno-version: v1.x
+
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
+      - name: Build NPM package
+        run: deno run -A ./scripts/build_npm.ts
+
+      - name: Build docs
+        run: |
+          cd npm && npx typedoc --out docs src/mod.ts
+
+      - name: Semantic Release
+        run: |
+          cd npm && npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./npm/docs

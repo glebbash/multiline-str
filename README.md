@@ -1,7 +1,7 @@
 # multiline-str
 
 [![Source](https://img.shields.io/badge/source-github-informational)](https://github.com/glebbash/multiline-strn)
-[![Deploy](https://github.com/glebbash/multiline-str/workflows/release/badge.svg)](https://github.com/glebbash/multiline-str/actions)
+[![Deploy](https://github.com/glebbash/multiline-str/workflows/build/badge.svg)](https://github.com/glebbash/multiline-str/actions)
 [![Coverage Status](https://coveralls.io/repos/github/glebbash/multiline-str/badge.svg?branch=master)](https://coveralls.io/github/glebbash/multiline-str?branch=master)
 
 Strip indentation of multiline strings based on length of the last line.

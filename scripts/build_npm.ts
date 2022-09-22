@@ -28,7 +28,7 @@ await build({
       "typedoc": "0.22.17",
     },
     release: {
-      branches: ["main"],
+      branches: ["master"],
     },
   },
 });
